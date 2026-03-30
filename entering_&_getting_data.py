@@ -6,12 +6,12 @@ class Colors:
     ENDC = '\033[0m'
 
 people = []
-user_input = input("Welcome\ntype [ r ] to register : ")
+user_input = input("type [ r ] to register : ")
 
 if user_input == 'r':
     while user_input != "exit":
         info = {
-            "full_name": input("\nWhat is your full name : "),
+            "full_name": input("What is your full name : "),
             "age": input("How old are you ( numbers only! ) : "),
             "occupation": input('What is your occupation : '),
             "nationality": input("Where are you from : ")
@@ -25,10 +25,10 @@ if user_input == 'r':
             break
 
         else:
-            print(f"\n{Colors.GREEN}Success, data saved successfully{Colors.ENDC}")
+            print(f"{Colors.GREEN}Success, data saved successfully{Colors.ENDC}")
             people.append(info)
 
-            user_input = input("type ' exit ' to stop, [ r ] to register, [ s ] to see your info and [ a ] to get all users data : ")
+            user_input = input("type ' exit ' to stop, [ r ] or [ enter ] to register, [ s ] to see your info and [ a ] to get all users data : ")
 
             if user_input.lower() == "exit":
                 break
@@ -42,7 +42,8 @@ if user_input == 'r':
                 break
 
             elif user_input == 'a':
-                validation_password = input(f"\n{Colors.RED}This is some sensitive data, you must prove that have admin access\nenter admin password : {Colors.ENDC}")
+                validation_password = input(f"{Colors.RED}This is some sensitive data, you must prove that you have admin access\nenter admin password : {Colors.ENDC}")
+                # in this case I'm using 'password' as the admin password, you can use more secure/strong password.
                 if validation_password == "password":
                     for person in people:
                         print(f'Full name : {person["full_name"]} | Age : {person["age"]} | Occupation : {person["occupation"]} | Country : {person["nationality"]}')
