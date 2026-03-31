@@ -33,7 +33,7 @@ class ArithmeticCalculations:
             return f"the number {number} is not even"
 
     @staticmethod
-    def list_div(nbr):
+    def list_of_dividors(nbr):
         dividors = []
         for i in range(1, nbr + 1):
             if nbr % i == 0:
@@ -49,4 +49,4 @@ print(obj.factorial(5))
 print(obj.sum(1, 2, 3, 4))
 print(obj.relatively_prime_numbers(9, 8))
 print(obj.is_even(3))
-print(obj.list_div(18))
+print(obj.list_of_dividors(18))
